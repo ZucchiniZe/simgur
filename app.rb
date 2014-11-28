@@ -1,9 +1,9 @@
 require 'sinatra'
 require 'haml'
-require 'better_errors'
 require 'coffee_script'
 
 configure :development do
+  require 'better_errors'
   use BetterErrors::Middleware
   BetterErrors.application_root = __dir__
 end

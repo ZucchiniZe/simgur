@@ -36,6 +36,6 @@ end
 get '/:img' do |img|
   @title = "Image"
   @img = "/#{img}.png"
-  @link = "#{request.host}#{@img}"
+  @link = "https://#{request.host}#{@img}"
   haml :img
 end

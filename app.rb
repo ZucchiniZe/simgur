@@ -14,27 +14,20 @@ def rand_string
 end
 
 get '/' do
-  @title = 'HAML Test'
-  haml :index
-end
-
-get '/rand' do
-  @title = "Random string generator"
-  @rand = rand_string
-  puts "rand: #{@rand}"
-  haml :rand
+  @title = "Image uploader"
+  haml :upload
 end
 
 get '/upload' do
-  @title = "Imgur Clone"
+  @title = "Image uploader"
   haml :upload
 end
 
 post '/upload' do
   @name = rand_string
 
-  File.open("./public/#{@name}.png", "w") do |f|
-    f.write(params['myfile'][:tempfile].read)
+  File.open("./public/#{@name}.#{params['image'][:filename].split('.').last}", "w") do |f|
+    f.write(params['image'][:tempfile].read)
   end
 
   redirect to("/#{@name}")

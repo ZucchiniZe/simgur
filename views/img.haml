@@ -1,0 +1,9 @@
+%h2
+  Here is your image!
+
+%p
+  Direct link:
+  %a{:href => @img}= @link
+
+%a{:href => @img}
+  %img{:src => @img}

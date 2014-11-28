@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'haml'
-require 'coffee_script'
 
 configure :development do
   require 'better_errors'

@@ -1,0 +1,17 @@
+!!! 5
+%html
+  %head
+    %meta{ charset: 'utf-8' }
+    %title= @title
+    %link{ rel: 'stylesheet', href: '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' }
+    %link{ rel: 'stylesheet', href: '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' }
+    %script{ src: '//code.jquery.com/jquery-2.1.1.min.js' }
+    :css
+      header { border-bottom: 1px solid #eee; }
+      main { margin-top: 25px; }
+  %body
+    .container
+      %header
+        %h1.text-muted= @title
+      %main
+        = yield
